@@ -42,8 +42,7 @@ for( let i=0; i <=20; i++){
 
         let peso = parseFloat(prompt("Digite o seu peso (Kg): "))
         let altura = parseFloat(prompt("Digite a sua altura(m): "))
-        let resultado3 = calcularIMC(peso, altura)
-        alert(resultado3)
+        gerarRelatorio(peso,altura)
 
         function calcularIMC(peso, altura){
            return  peso / (altura * altura)
@@ -55,18 +54,31 @@ for( let i=0; i <=20; i++){
 
     // classificar imc
         
-         
-        
-         function classificarIMC(imc){
-            if(imc<18,5){ alert('baixo peso')}
-            else if (imc >= 18,5){alert('Peso normal')}
-            else if (imc >=25,0) {alert('Sobrepeso')}
-            else if (imc >=30,0) {alert('Obesidade grau 1')}
-            else if (imc >=35,0) {alert('Obesidade grau 2')}
-            else if (imc >=40,0) {alert('Obesidade grau 3')}
+      function clasificarIMC(imc){
+        if( imc >=40) {
+            alert("obesidade grau 3 " + imc)
         }
+        else if( imc >=35) {
+            alert("obesidade grau 2 " + imc)
+        }
+         else if( imc >=30) {
+            alert("obesidade grau 1 " + imc)
+        }
+         else if ( imc >=25) {
+            alert("sobrepeso " + imc)
+        }
+        else if( imc >=18.5) {
+            alert("peso normal " + imc)
+        }
+        else if( imc <18.5) {
+            alert("baixo peso " + imc)
+        }
+      }
+
+      function gerarRelatorio(peso, altura){
+        let imc = calcularIMC(peso, altura)
+        clasificarIMC(imc)
+      }
 
 
-
-    // gerar relatorio
-        
+,
